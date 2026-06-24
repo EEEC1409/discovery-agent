@@ -1,0 +1,38 @@
+{
+  "discovery": "resuelve",
+  "generated": "2026-06-23",
+  "interviews": [
+    "Entrevistas_APP_Resuelve.md"
+  ],
+  "personas": [
+    {
+      "name": "C. (Cliente)",
+      "role": "cliente",
+      "primary": true,
+      "firsthand": true,
+      "note": "Entrevistas generadas desde backlog; frontmatter: rol_entrevistado=cliente, primera_persona=true"
+    },
+    {
+      "name": "Administrador de negocio",
+      "role": "administrador",
+      "primary": false,
+      "firsthand": false,
+      "note": "Solo mencionado en US-038 dentro del archivo de entrevistas con rol_entrevistado=cliente. Sin entrevista propia."
+    }
+  ],
+  "pains": [
+    { "id": "sin-pantalla-bienvenida-marca",    "source": "Entrevistas_APP_Resuelve.md", "persona": "C. (Cliente)" },
+    { "id": "verificacion-cliente-manual",       "source": "Entrevistas_APP_Resuelve.md", "persona": "C. (Cliente)" },
+    { "id": "oferta-no-visible-en-app",          "source": "Entrevistas_APP_Resuelve.md", "persona": "C. (Cliente)" },
+    { "id": "rechazo-sin-mensaje-claro",         "source": "Entrevistas_APP_Resuelve.md", "persona": "C. (Cliente)" },
+    { "id": "estado-credito-inaccesible",        "source": "Entrevistas_APP_Resuelve.md", "persona": "C. (Cliente)" },
+    { "id": "registro-inexistente",              "source": "Entrevistas_APP_Resuelve.md", "persona": "C. (Cliente)" },
+    { "id": "login-sin-alternativas",            "source": "Entrevistas_APP_Resuelve.md", "persona": "C. (Cliente)" },
+    { "id": "sin-incentivos-pago-puntual",       "source": "Entrevistas_APP_Resuelve.md", "persona": "C. (Cliente)" },
+    { "id": "programa-puntos-sin-app",           "source": "Entrevistas_APP_Resuelve.md", "persona": "C. (Cliente)" },
+    { "id": "gestion-perfil-incompleta",         "source": "Entrevistas_APP_Resuelve.md", "persona": "C. (Cliente)" },
+    { "id": "errores-sin-feedback-claro",        "source": "Entrevistas_APP_Resuelve.md", "persona": "C. (Cliente)" },
+    { "id": "accesibilidad-rendimiento-base",    "source": "Entrevistas_APP_Resuelve.md", "persona": "C. (Cliente)" },
+    { "id": "banner-dependiente-de-release",     "source": "Entrevistas_APP_Resuelve.md", "persona": "Administrador de negocio" }
+  ]
+}

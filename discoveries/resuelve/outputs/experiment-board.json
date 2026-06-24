@@ -1,0 +1,46 @@
+{
+  "discovery": "resuelve",
+  "generated": "2026-06-23",
+  "hypotheses": [
+    {
+      "id": "H-01",
+      "risk": "alto",
+      "assumption": "Los clientes de Resuelve tienen suficiente demanda de autogestión digital para descargar y usar una APP en lugar de llamar al call center",
+      "hypothesis": "Creemos que al menos el 20 % de los clientes activos de Resuelve harán clic en un llamado a la acción de descarga de la APP si reciben el anuncio por correo/SMS, porque la necesidad de ver su estado de cuenta y canjear puntos sin llamar es un dolor real y frecuente",
+      "metric": "Tasa de clic (CTR) en el botón de descarga/registro de una landing page enviada por correo y SMS a la base activa",
+      "threshold": "≥ 20 % de CTR sobre una muestra de 200 clientes activos en los primeros 14 días",
+      "experiment": "Smoke test / landing page: crear una página estática que describe las funciones de la APP (registro, cuenta, puntos) sin construir el backend, y enviarla por correo y SMS a 200 clientes activos. Medir cuántos hacen clic en el CTA de descarga o registro.",
+      "decision": "Si pasa (≥ 20 % CTR) → la demanda está validada; comenzar el primer sprint con el flujo de registro. Si falla (< 20 % CTR) → investigar la barrera (mensaje, beneficio, canal de comunicación) con 10 entrevistas antes de invertir en desarrollo; no construir nada hasta entender por qué no atrajo."
+    },
+    {
+      "id": "H-02",
+      "risk": "alto",
+      "assumption": "El flujo de registro con OTP tiene una tasa de completitud suficientemente alta para no bloquear la adopción masiva",
+      "hypothesis": "Creemos que ≥ 60 % de los clientes nuevos que inicien el registro en la APP lo completarán (incluyendo la validación OTP y creación de contraseña) sin asistencia y en ≤ 5 minutos, porque el flujo en 3 pasos es simple y el OTP llega a tiempo",
+      "metric": "Tasa de completitud del flujo de registro: usuarios que finalizan la creación de contraseña / usuarios que inician el ingreso de datos personales",
+      "threshold": "≥ 60 % de los participantes completan el flujo sin asistencia en ≤ 5 minutos, en sesión de prueba con prototipo navegable sobre 10 usuarios reales",
+      "experiment": "Prototipo navegable (Figma/InVision) del flujo de registro completo (datos → OTP simulado → contraseña) + 10 sesiones de prueba de usabilidad con clientes reales. Medir tasa de completitud, tiempo por paso y puntos de abandono.",
+      "decision": "Si pasa (≥ 60 % completitud sin asistencia) → construir el flujo de registro con confianza en el diseño actual. Si falla (< 60 %) → identificar el paso de abandono específico, rediseñar (aumentar TTL del OTP a 10 min, añadir reenvío inmediato, reducir campos) y repetir la prueba antes de construir el backend."
+    },
+    {
+      "id": "H-03",
+      "risk": "medio",
+      "assumption": "El programa de puntos acumulados es la motivación principal que llevará a los clientes a descargar y usar la APP",
+      "hypothesis": "Creemos que ≥ 15 % de los clientes activos con puntos acumulados harán clic en un enlace de canje incluido en su estado de cuenta mensual por correo, porque los puntos representan valor percibido no aprovechado que se convierte en gatillo de acción",
+      "metric": "Tasa de clic (CTR) en el enlace 'Canjea tus [X] puntos ahora' incluido en el correo de estado de cuenta mensual",
+      "threshold": "≥ 15 % de CTR sobre 300 clientes activos con puntos acumulados en los primeros 30 días tras el envío",
+      "experiment": "Fake door: agregar en el correo de estado de cuenta mensual un botón 'Canjea tus [X] puntos ahora' que lleva a un formulario de pre-registro de interés (no al canje real). Medir el CTR sobre la base activa con puntos acumulados.",
+      "decision": "Si pasa (≥ 15 % CTR) → los puntos son el gancho de adquisición principal; destacarlos como beneficio #1 en el onboarding y en la campaña de lanzamiento. Si falla (< 15 % CTR) → los puntos solos no generan motivación suficiente; explorar con 10 entrevistas qué beneficio sí activa la descarga (ahorro de tiempo en consultas, notificaciones de vencimiento, acceso sin llamar) antes de definir el mensaje de lanzamiento."
+    },
+    {
+      "id": "H-04",
+      "risk": "medio",
+      "assumption": "Los clientes activos prefieren usar una APP a llamar al call center para consultas de rutina como ver el estado de cuenta o los movimientos",
+      "hypothesis": "Creemos que ≥ 50 % de los clientes que actualmente llaman para consultas de saldo declararán preferencia por usar una APP en lugar de llamar, si se les muestra una demo de 2 minutos del flujo de consulta de cuenta, porque el autoservicio elimina el tiempo de espera en la línea",
+      "metric": "Porcentaje de entrevistados que declaran preferencia por la APP sobre el call center para consultas de saldo y movimientos, tras ver la demo del prototipo",
+      "threshold": "≥ 50 % de preferencia declarada sobre una muestra de 20 clientes entrevistados en un plazo de 3 semanas",
+      "experiment": "Entrevista dirigida con demo en vivo: contactar a 20 clientes que hayan llamado al call center en el último mes para consultas de saldo. Mostrarles el prototipo navegable del dashboard (estado de cuenta + movimientos) y preguntar directamente si preferirían usar la APP para esa consulta en el futuro.",
+      "decision": "Si pasa (≥ 50 % prefieren APP) → el canal APP es viable para migrar consultas de rutina; usar este dato para dimensionar el impacto en call center y como argumento del pitch de inversión. Si falla (< 50 %) → identificar la barrera específica (desconfianza digital, hábito del call center, falta de smartphone compatible, falta de incentivo), evaluar si el segmento objetivo es correcto y si se necesita un incentivo de migración antes de lanzar."
+    }
+  ]
+}

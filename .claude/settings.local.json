@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python .claude/scripts/build-report.py discoveries/resuelve)",
+      "Bash(py .claude/scripts/build-report.py discoveries/resuelve)"
+    ]
+  }
+}
